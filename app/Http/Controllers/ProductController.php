@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
-use App\Http\Requests\ProductFilterRequest;
+use App\Http\Requests\ProductRequest;
 use App\Http\Resources\Product\ProductCollection;
 use App\Http\Resources\Product\ProductResource;
 
@@ -12,7 +12,7 @@ class ProductController extends Controller
     /**
      * Получить список товаров с возможностью фильтрации
      */
-    public function index(ProductFilterRequest $request): ProductCollection
+    public function index(ProductRequest $request): ProductCollection
     {
         $products = Product::query()
             ->filter($request->validated())

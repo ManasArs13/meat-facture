@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class CategoryFilterRequest extends FormRequest
+class OrderRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,8 +22,12 @@ class CategoryFilterRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'sort_by' => 'nullable|string|in:id,name,price,created_at',
+            'user_id' => 'nullable|integer|exists:users,id',
+            'sort_by' => 'nullable|string|in:id,total_amount,is_completed,created_at',
             'sort_dir' => 'nullable|string|in:asc,desc',
+            'total_amount_from' => 'nullable|numeric|min:0',
+            'total_amount_to' => 'nullable|numeric|min:0',
+            'is_completed' => 'nullable|boolean',
         ];
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CategoryFilterRequest;
+use App\Http\Requests\CategoryRequest;
 use App\Http\Resources\Category\CategoryCollection;
 use App\Http\Resources\Category\CategoryResource;
 use App\Models\Category;
@@ -13,7 +13,7 @@ class CategoryController extends Controller
     /**
      * Получить список категорий с возможностью фильтрации
      */
-    public function index(CategoryFilterRequest $request): CategoryCollection
+    public function index(CategoryRequest $request): CategoryCollection
     {
         $categories = Category::query()
             ->filter($request->validated())

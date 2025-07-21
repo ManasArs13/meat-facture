@@ -32,7 +32,7 @@ class Product extends Model
         return $query
             ->when($filters['price_from'] ?? null, fn($q, $price) => $q->where('price', '>=', $price))
             ->when($filters['price_to'] ?? null, fn($q, $price) => $q->where('price', '<=', $price))
-            ->when($filters['is_available'] ?? null, fn($q, $inStock) => $q->where('is_available', (bool)$inStock))
+            ->when($filters['is_available'] ?? null, fn($q, $is_available) => $q->where('is_available', (bool)$is_available))
             ->when($filters['name'] ?? null, fn($q, $name) => $q->where('name', 'like', "%{$name}%"));
     }
 

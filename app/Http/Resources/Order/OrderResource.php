@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Resources\Product;
+namespace App\Http\Resources\Order;
 
+use App\Http\Resources\Product\ProductResource;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ProductResource extends JsonResource
+class OrderResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,13 +17,13 @@ class ProductResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'name' => $this->name,
-            'description' => $this->description,
-            'category' => $this->category->name,
-            'price' => $this->price,
-            'is_available' => $this->is_available,
+            'user' => $this->user->name,
+            'comment' => $this->comment,
+            'total_amount' => $this->description,
+            'is_completed' => $this->is_completed,
             'created_at' => $this->created_at->format('Y-m-d H:i:s'),
             'updated_at' => $this->updated_at->format('Y-m-d H:i:s'),
+            'products'  => ProductResource::collection($this->products),
             'links' => [
                 'self' => route('products.show', $this->id),
             ],

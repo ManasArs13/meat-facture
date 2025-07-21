@@ -17,7 +17,7 @@ class OrderFactory extends Factory
     public function definition(): array
     {
         return [
-            'description' => $this->faker->text(),
+            'comment' => $this->faker->text(),
             'is_completed' => $this->faker->boolean(0.5)
         ];
     }

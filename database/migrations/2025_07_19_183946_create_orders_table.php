@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->foreignId('user_id')->constrained();
-            $table->text('description')->nullable();
+            $table->text('comment')->nullable();
             $table->decimal('total_amount', 8, 2)->default(0.00);
             $table->boolean('is_completed')->default(false);
         });
