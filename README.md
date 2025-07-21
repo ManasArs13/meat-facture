@@ -73,20 +73,23 @@ php artisan migrate --seed
 php artisan test
 ```
 
--   orders (4 теста)
-     ✓ guest cannot access orders  
-     ✓ authenticated user can access orders  
-     ✓ authenticated user can show single order  
-     ✓ it creates order with products
+### orders (4 теста)
+  
+     - guest cannot access orders  
+     - authenticated user can access orders  
+     - authenticated user can show single order  
+     - it creates order with products
 
--   categories (4 теста)
-    ✓ it can list categories 0.31s
-    ✓ it can filter categories 0.02s
-    ✓ it can sort categories 0.01s
-    ✓ it can show single category
+### categories (4 теста)
+  
+    - it can list categories
+    - it can filter categories
+    - it can sort categories
+    - it can show single category
+    
 
--   products (4 теста)
-    ✓ it can list products 0.03s
-    ✓ it can filter products 0.01s
-    ✓ it can sort products 0.02s
-    ✓ it can show single products
+### products (4 теста)
+    - it can list products
+    - it can filter products
+    - it can sort products
+    - it can show single products
