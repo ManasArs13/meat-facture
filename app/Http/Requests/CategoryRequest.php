@@ -22,6 +22,7 @@ class CategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'name' => 'nullable|string|max:180',
             'sort_by' => 'nullable|string|in:id,name,price,created_at',
             'sort_dir' => 'nullable|string|in:asc,desc',
         ];
