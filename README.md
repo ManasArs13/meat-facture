@@ -35,7 +35,7 @@ REST API для управления заказами в приложении
 1. Клонировать репозиторий:
 
 ```bash
-git clone https://github.com/ManasArs13/meat-facture.git && cd shortlink
+git clone https://github.com/ManasArs13/meat-facture.git && cd meat-facture
 ```
 
 2. Установите зависимости:
