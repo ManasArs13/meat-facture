@@ -28,6 +28,7 @@ class OrderController extends Controller
      *     tags={"Orders"},
      *     summary="Get filtered and sorted list of orders",
      *     operationId="getOrders",
+     *     security={{"bearerAuth":{}}},
      *     @OA\Parameter(
      *         name="total_amount_from",
      *         in="query",
@@ -108,6 +109,7 @@ class OrderController extends Controller
      *     tags={"Orders"},
      *     summary="Get order by ID",
      *     operationId="geOrderById",
+     *     security={{"bearerAuth":{}}},
      *     @OA\Parameter(
      *         name="id",
      *         in="path",
